@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../features/transactions/data/transaction_model.dart';
 
 class ApiService {
-  final String baseUrl = "http://localhost:3000"; // sua API Node
+  final String baseUrl = "http://192.168.12.8:3000"; // sua API Node
 
   Future<List<TransactionModel>> getTransactions() async {
     final response = await http.get(Uri.parse("$baseUrl/transactions"));
