@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart'; 
 import 'features/transactions/ui/transactions_page.dart';
+import 'features/auth/ui/login_page.dart';
 
 void main() {
   runApp(const BankApp());
@@ -13,7 +14,7 @@ class BankApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bank App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const TransactionsPage(),
+      home: const LoginPage(),
       );
   }
 }

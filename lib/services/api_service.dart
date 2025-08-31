@@ -14,4 +14,32 @@ class ApiService {
       throw Exception("Erro ao buscar transações");
     }
   }
+
+  Future<http.Response> login(String email, String password) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/login'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'email': email,
+        'password': password,
+      }),
+    );
+    return response;
+  }
+
+  Future<http.Response> register(String email, String password) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/register'), // Aponta para a nova rota /register
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'email': email,
+        'password': password,
+      }),
+    );
+    return response;
+  }
 }
